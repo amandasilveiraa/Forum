@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    font-family: 'Inter';
+}
+
+.containerA {
+    display: grid;
+    background-color: #EDF0FA;;
+    grid-template-columns: 100vw;
+    grid-template-rows: 10vh 80vh 10vh;
+    grid-template-areas:"header"
+                        "form"
+                        "footer";
+}
+
+.header {
+    grid-area: header;
+    height: 10vh;
+}
+
+.form {
+    grid-area: form;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.logoImg{
+    margin-top: 3vh;
+    margin-left: 3vw;
+    width: 14vw;
+    height: 6vh;
+}
+
+.formu {
+    width: 35vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 30px;
+    margin-right: 5vw;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30vw;
+    height: 45vh;
+    gap: 1vh;
+}
+
+.loginImg {
+    width: 50vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-right: 5vw;
+}
+
+input{
+    height: 7vh;
+    border: none;
+    border-radius: 9px;
+    background-color: #017257;
+}
+
+input:hover:is([type = 'submit']){
+    border: 0.2vw black solid;
+}
+
+input:focus{
+    outline: 0;
+    padding-left: 0.5vw;
+}
+
+.distancia_input{
+    margin-top: 4vh;
+}
+
+.class_button1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+}
+
+.button1{
+    width: 20vw;
+    height: 7vh;
+    font-size: medium;
+    border-radius: 9px;
+    border: none;
+    background-color: #017257;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: #0BB28A;
+}
+
+a:hover{
+    font-weight: bold;
+}
