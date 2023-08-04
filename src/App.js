@@ -1,7 +1,14 @@
+import React from 'react';
+import Header from './components/Header/Header';
+import StyledGlobal from './styledGlobal';
 
-
-function App() {
-  <>abc</>
-}
+const App = () => {
+  return (
+    <div>
+      <StyledGlobal/>
+      <Header/>
+    </div>
+  );
+};
 
 export default App;
