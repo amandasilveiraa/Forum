@@ -1,7 +1,13 @@
-
+import Postagem from "./pages/Tela Postagem/TelaPostagem";
+import StyledGlobal from "./styledGlobal";
 
 function App() {
-  <>abc</>
+  return(
+  <>
+  <StyledGlobal />
+  <Postagem/>
+  </>
+  )
 }
 
 export default App;
