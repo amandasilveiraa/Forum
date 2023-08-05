@@ -1,14 +1,26 @@
 import React from "react";
-import { TituloCadastro, DivBotoes, TituloBotao, EspaçoTexto } from "./styledCadastro";
+import { CustomForm, CustomInput, CustomLabel, CustomLink, FormContainer, TitleDoIt, CustomInputSubmit, PAlready } from './styledCadastro';
 
 function Cadastro (){
+    document.body.style.overflow = 'hidden';
     return(
-        <>
-        <TituloCadastro>Welcome back to DO IT!</TituloCadastro>
-        <DivBotoes>
-        <FormularioCadastro
-        </DivBotoes>
-        </>
+    <FormContainer>
+        <TitleDoIt>Welcome To Do It!</TitleDoIt>
+        <CustomForm>
+        <CustomLabel>Name</CustomLabel>
+        <CustomInput type="text" id="usuario" placeholder="Fulano Ciclano" />
+        
+        <CustomLabel>Email</CustomLabel>
+        <CustomInput type="text" id="email" placeholder="0632454567@senacrs.edu.br"/>
+
+        <CustomLabel>Password</CustomLabel>
+        <CustomInput type="password" id="senha" placeholder="Enter your password"/>
+        
+        <CustomInputSubmit class="submit" id="submit" value="Create account" type="submit"></CustomInputSubmit>
+
+       </CustomForm>
+       <PAlready>Already had? <CustomLink href="">Sign in</CustomLink></PAlready>
+    </FormContainer>
     )
 }
 
