@@ -21,7 +21,6 @@ export const DivLogo = styled.div`
     flex-direction: row;
     align-items: center; /* Centraliza verticalmente */
     justify-content: center; /* Centraliza horizontalmente */
-    /* background-color: blue; */
     margin-left: 5%;
 
 `
