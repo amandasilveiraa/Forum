@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const ContainerGrande = styled.div`
     display: flex;
     flex-direction: row;
-    overflow-x: scroll
+    overflow-x: scroll;
+
 `
 
 export const CardContainer = styled.div`
@@ -18,7 +19,7 @@ export const CardContainer = styled.div`
     display:flex;
     flex-direction:row;
     position: relative;
-    
+
 `
 export const ImagemContainer = styled.img`
     object-fit: cover;

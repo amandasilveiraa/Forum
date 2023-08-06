@@ -8,7 +8,7 @@ export const TextoContainer = styled.div`
 
 export const TituloContainer = styled.h3`
     width: 30vw;
-    height: 37vh;
+    height: 32vh;
     color: #000;
     font-family: Nunito;
     font-size: 55px;
@@ -29,7 +29,7 @@ export const DescContainer = styled.p`
     font-weight:400;
     letter-spacing: -0.38px;
     margin-left: 15vh;
-    margin-top:3vh;
+    margin-top:5vh;
 
 `
 
@@ -38,4 +38,19 @@ export const ImagemContainer = styled.img`
     position:absolute;
     width: 100%;
     height: 100%;
+`
+export const DivPublic = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    margin-bottom:1.5vh;
+
+`
+
+export const DivImg = styled.img`
+    width: 4vh;
+`
+
+export const ButtonEstilo = styled.div`
 `

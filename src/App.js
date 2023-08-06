@@ -4,7 +4,7 @@ import StyledGlobal from "./styledGlobal";
 function App() {
   return(
   <>
-  <StyledGlobal />
+  <StyledGlobal/>
   <Postagem/>
   </>
   )
