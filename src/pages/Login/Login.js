@@ -1,21 +1,28 @@
 import React from 'react';
-import { CustomForm, CustomInput, CustomLabel, CustomLink, FormContainer, TitleDoIt } from './styled';
+import { CustomForm, CustomInput, CustomInputSubmit, CustomLabel, CustomLink, FormContainer, TitleDoIt } from './styledLogin';
 
-function Login(){
+function Login() {
+  document.body.style.overflow = 'hidden'; //  Corta o conteúdo que ultrapassa o tamanho da DIV
+  
   return (
     <FormContainer>
-      <TitleDoIt>Welcome Back To Do It!</TitleDoIt>
+      
+      <TitleDoIt>Welcome back to Do It!</TitleDoIt>
+
       <CustomForm>
+
         <CustomLabel>Email</CustomLabel>
-        <CustomInput type="text" id="usuario" />
+        <CustomInput type="text" id="usuario" placeholder="0632454567@senacrs.edu.br" />
         
         <CustomLabel>Password</CustomLabel>
-        <CustomInput type="password" id="senha" />
-        
-        <CustomInput class="submit" id="submit" value="Entrar" type="submit">Login</CustomInput>
+        <CustomInput type="password" id="senha" placeholder="Enter your password" />
 
+        <CustomInputSubmit class="submit" id="submit" value="Entrar" type="submit" />
+        
       </CustomForm>
+
       <p>Not registred yet? <CustomLink href="">Create an account</CustomLink></p>
+
     </FormContainer>
   );
 };

@@ -1,21 +1,19 @@
 import styled from "styled-components";
 
 export const TitleDoIt = styled.h1`
-  margin-bottom: 20px;
+  margin-bottom: 5px;
+  font-size: 7vh;
 `
 
 export const FormContainer = styled.div`
-  // border-radius: 30px;
-  // margin-right: 5vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  background-color: blue;
+  height: 65vh;
 `
+
 export const CustomForm = styled.form`
-  background-color: pink;
   display: flex;
   flex-direction: column;
   width: 30vw;
@@ -24,25 +22,40 @@ export const CustomForm = styled.form`
 `
 
 export const CustomInput = styled.input`
+  background-color: #D9D9D9;
   height: 7vh;
   border: none;
   border-radius: 20px;
-  background-color: #D9D9D9;
   margin-bottom: 5px;
+  padding: 10px;
+  color: black;
+
   ::placeholder {
-    color: blue;
-    font-style: italic;
+    margin-right: 5px;
+    padding: 10px;
   }
+
 `;
 
+export const CustomInputSubmit = styled.input`
+  height: 7vh;
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 5px;
+  margin-top: 5vh;
+  background-color: #030202;
+  color: white;
+  font-weight: bold;
+`
+
 export const CustomLabel = styled.label`
-  margin-top: 4vh;
+  margin-top: 2vh;
+  font-weight: bold;
+  color: black;
 `
 
 export const CustomLink = styled.a`
   text-decoration: none;
   color: #030202;
-  ::hover {
-    font-weight: bold;
-  }
+  font-weight: bold;
 `

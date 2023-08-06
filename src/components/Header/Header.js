@@ -1,6 +1,6 @@
 import React from 'react';
 import logoImg from '../../assets/logoTeste.svg'
-import { ButtonEstilo, DivButton, DivLeft, DivLogo, HeaderContainer, ImgLogo } from './styled';
+import { ButtonEstilo, DivButton, DivLeft, DivLogo, HeaderContainer, ImgLogo } from './styledHeader';
 
 function Header () {
   const handleButtonClick = () => {
