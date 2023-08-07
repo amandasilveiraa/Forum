@@ -19,6 +19,7 @@ export const CustomForm = styled.form`
   width: 30vw;
   height: 45vh;
   gap: 1vh;
+  margin-top: 4vh;
 `
 
 export const CustomInput = styled.input`

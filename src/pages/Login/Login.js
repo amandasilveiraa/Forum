@@ -17,7 +17,7 @@ function Login() {
         <CustomLabel>Password</CustomLabel>
         <CustomInput type="password" id="senha" placeholder="Enter your password" />
 
-        <CustomInputSubmit class="submit" id="submit" value="Entrar" type="submit" />
+        <CustomInputSubmit class="submit" id="submit" value="Enter" type="submit" />
         
       </CustomForm>
 
