@@ -9,7 +9,7 @@ export const ContainerGrande = styled.div`
 
 export const CardContainer = styled.div`
     width: 30vw;
-    height: 45vh;
+    height: 43vh;
     flex-shrink: 0;
     background-color:#000000;
     margin-left:2vh;
@@ -39,7 +39,7 @@ export const DescContainer = styled.h4`
     align-items:end;
     margin-left:5vh;
     position:absolute;
-    top:39vh;
+    top:35vh;
 `
 export const SetaImg = styled.img`
 `

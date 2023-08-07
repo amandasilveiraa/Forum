@@ -7,17 +7,17 @@ export const TextoContainer = styled.div`
 `
 
 export const TituloContainer = styled.h3`
-    width: 30vw;
+    width: 35vw;
     height: 32vh;
     color: #000;
     font-family: Nunito;
     font-size: 55px;
     font-style: normal;
     font-weight: 700;
-    line-height: 68px; /* 104.615% */
+    line-height: 10vh; /* 104.615% */
     
     display:flex;
-    margin-left: 35vh;
+    margin-left: 30vh;
    `
 
 export const DescContainer = styled.p`
