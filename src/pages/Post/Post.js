@@ -1,5 +1,6 @@
 import Header3 from "../../components/Header3/Header3"
-import { TextoContainer, TituloContainer, DescContainer, PostContainer } from "./styled"
+import { TextoContainer, TituloContainer, DescContainer, PostContainer, ImgContainer, ImgDiv, TextoDiv, TitutloDiv, PDiv1 } from "./styled"
+import Imgtrend from '../../assets/dedfdb7cb31cbccc1410706ca26819c8.jpg'
 
 function Post(){
 
@@ -14,7 +15,17 @@ function Post(){
             </DescContainer>
         </TextoContainer>
         <PostContainer>
-            
+            <ImgDiv>
+            <ImgContainer src={Imgtrend} alt=""/>
+            </ImgDiv>
+        <PDiv1>
+            <TitutloDiv>
+                oiii
+            </TitutloDiv>
+            <TextoDiv>
+                etc etc
+            </TextoDiv>
+        </PDiv1>
         </PostContainer>
         </>
     )

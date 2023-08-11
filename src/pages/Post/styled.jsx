@@ -42,3 +42,37 @@ export const PostContainer = styled.div`
 
     border-radius: 41px;
 `
+export const ImgDiv = styled.div`
+    object-fit: cover;
+    position:absolute;
+`
+export const ImgContainer = styled.img`
+    width: 55vw;
+    height: 50vh;
+    flex-shrink: 0;
+    border-radius: 41px;
+    object-fit: cover;
+    object-position:center bottom;
+`
+export const TextoDiv = styled.div`
+    color: #000;
+    font-family: Nunito;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px; /* 150% */
+`
+export const TitutloDiv = styled.h1`
+    color: #000;
+    font-family: Nunito;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+`    
+export const PDiv1 = styled.p`
+    display: flex;
+    align-items: flex-start; 
+    justify-content: flex-end;
+`
+export const PDiv2 = styled.div`
+`
