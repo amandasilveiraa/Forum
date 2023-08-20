@@ -1,9 +1,12 @@
 import React from "react";
 import { CustomForm, CustomInput, CustomLabel, CustomLink, FormContainer, TitleDoIt, CustomInputSubmit, PAlready } from './styledCadastro';
+import Header from "../../components/Header/Header";
 
 function Cadastro (){
     document.body.style.overflow = 'hidden';
     return(
+    <>
+    <Header/> 
     <FormContainer>
         <TitleDoIt>Welcome To Do It!</TitleDoIt>
         <CustomForm>
@@ -21,6 +24,7 @@ function Cadastro (){
        </CustomForm>
        <PAlready>Already had? <CustomLink href="">Sign in</CustomLink></PAlready>
     </FormContainer>
+    </>
     )
 }
 
