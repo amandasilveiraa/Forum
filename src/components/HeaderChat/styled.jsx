@@ -4,23 +4,15 @@ export const HeaderContainer = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /* padding: 20px; */
+    /* background-color: #a21515; */
 `
-
-export const DivLeft = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: left; /* Centraliza verticalmente */
-    justify-content: left; /* Centraliza horizontalmente */
-    background-color: pink;
-`
-
 export const DivLogo = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center; /* Centraliza verticalmente */
-    justify-content: center; /* Centraliza horizontalmente */
-    margin-left: 5%;
-
+    justify-content: flex; /* Centraliza horizontalmente */
+    margin-left: -7%;
 `
 
 export const ImgLogo = styled.img`
