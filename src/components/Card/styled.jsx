@@ -9,13 +9,13 @@ export const ContainerGrande = styled.div`
 
 export const CardContainer = styled.div`
     width: 30vw;
-    height: 43vh;
+    height: 50vh;
     flex-shrink: 0;
     background-color:#000000;
     margin-left:2vh;
     margin-right:1vh;
+    border-radius:13px;
 
-    border-radius: 41px;
     display:flex;
     flex-direction:row;
     position: relative;

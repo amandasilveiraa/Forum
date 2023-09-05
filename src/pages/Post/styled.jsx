@@ -1,9 +1,9 @@
 import styled from "styled-components";
+import Imgtrend from '../Post/vendedor-ambulante.jpg'
 
 export const TextoContainer = styled.div`
     display: flex;
     flex-direction: row;
-
 `
 
 export const TituloContainer = styled.h3`
@@ -35,32 +35,34 @@ export const DescContainer = styled.p`
 
 export const PostContainer = styled.div`
     width: 95vw;
-    height: 50vh;
     flex-shrink: 0;
-    background-color:#D9D9D94F;
     margin-left:4vh;
-
-    border-radius: 41px;
+    display: grid;
+    grid-template-areas: "photo text";
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50vh;
 `
 export const ImgDiv = styled.div`
-    object-fit: cover;
-    position:absolute;
+    grid-area: photo;
+    border: 1px 0px 0px 1px;
+    border-color: white;
+    border-radius: 41px 0px 0px 41px;
+    background-image: url(${Imgtrend});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
 `
-export const ImgContainer = styled.img`
-    width: 55vw;
-    height: 50vh;
-    flex-shrink: 0;
-    border-radius: 41px;
-    object-fit: cover;
-    object-position:center bottom;
-`
+
 export const TextoDiv = styled.div`
     color: #000;
     font-family: Nunito;
-    font-size: 20px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 400;
-    line-height: 30px; /* 150% */
+    line-height: 30px;
+    width:39vw;
+    text-align:justify;
+    
 `
 export const TitutloDiv = styled.h1`
     color: #000;
@@ -69,10 +71,25 @@ export const TitutloDiv = styled.h1`
     font-style: normal;
     font-weight: 500;
 `    
-export const PDiv1 = styled.p`
+export const PDiv1 = styled.div`
+    grid-area: text;
     display: flex;
+    flex-direction: column;
+    padding-left: 10%;
+    padding-top: 3vh;
     align-items: flex-start; 
-    justify-content: flex-end;
+    background-color:#D9D9D94F;
+    border: 0px 1px 1px 0px;
+    border-color: white;
+    border-radius: 0px 41px 41px 0px;
 `
-export const PDiv2 = styled.div`
+
+export const ButtonChat = styled.button`
+    width: 143px;
+    height: 41px;
+    border-radius: 25.5px;
+    background-color:#000;
+    color: white;
+    margin-top:1vh;
+    margin-left:60vh;
 `

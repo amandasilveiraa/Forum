@@ -1,9 +1,8 @@
 import Header3 from "../../components/Header3/Header3"
-import { TextoContainer, TituloContainer, DescContainer, PostContainer, ImgContainer, ImgDiv, TextoDiv, TitutloDiv, PDiv1 } from "./styled"
-import Imgtrend from '../../assets/dedfdb7cb31cbccc1410706ca26819c8.jpg'
+import { TextoContainer, TituloContainer, DescContainer, PostContainer, ImgDiv, TextoDiv, TitutloDiv, PDiv1, ButtonChat } from "../Post/styled"
 
-function Post(){
-
+function Post(){  
+   
     return(
         <>
         <Header3/>
@@ -15,17 +14,18 @@ function Post(){
             </DescContainer>
         </TextoContainer>
         <PostContainer>
-            <ImgDiv>
-            <ImgContainer src={Imgtrend} alt=""/>
-            </ImgDiv>
-        <PDiv1>
-            <TitutloDiv>
-                oiii
-            </TitutloDiv>
-            <TextoDiv>
-                etc etc
-            </TextoDiv>
-        </PDiv1>
+            <ImgDiv/>
+            <PDiv1>
+                <TitutloDiv>
+                    INTERVENÇÃO
+                </TitutloDiv>
+                <TextoDiv>
+                Uma intervenção promissora para auxiliar cidadãos marginalizados a ingressar no mercado de trabalho é a implementação de programas abrangentes de capacitação profissional e desenvolvimento de habilidades. Estes programas não apenas fornecem treinamento técnico adequado para as demandas do mercado, mas também se concentram no desenvolvimento de habilidades socioemocionais e na construção de autoconfiança. 
+                </TextoDiv>
+                <ButtonChat>    
+                    CHAT
+                </ButtonChat>
+            </PDiv1>
         </PostContainer>
         </>
     )
