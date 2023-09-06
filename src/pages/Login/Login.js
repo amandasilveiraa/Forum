@@ -2,25 +2,39 @@ import { useState } from 'react';
 import Header from '../../components/Header/Header'
 import { CustomForm, CustomInput, CustomInputSubmit, CustomLabel, CustomLink, FormContainer, TitleDoIt } from './styledLogin';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
 
   document.body.style.overflow = 'hidden'; //  Corta o conteúdo que ultrapassa o tamanho da DIV
   
-  const [email, setEmail] = useState = ('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = (e) => {
-    const credenciais = { email, password }
+  console.log(email)
+
+  const navigate = useNavigate()
+
+  const goToCadastro = () => {
+    navigate('cadastro')
+  }
+
+  const hadleSubmit = (e) => {
+    e.preventDefault()
+
+    const credentials = { email, password } 
     
-    axios.post('https://localhost:8000/login', credenciais, {
+    axios
+    .post('http://localhost:8000/login', credentials, {
       headers: {
         'Content-Type': 'application/json',
       }
-    }).then(response => {
-      alert(response.data.message)
     })
-      .catch(error => console.log(error))
+    .then(response => {
+      alert(response.data.message)
+      goToCadastro()
+    })
+    .catch(error => console.log(error))
     
   };
   
@@ -31,10 +45,11 @@ function Login() {
         
         <TitleDoIt>Welcome back to Do It!</TitleDoIt>
 
-        <CustomForm onSubmit={handleSubmit}>
+        <CustomForm onSubmit={hadleSubmit}>
 
           <CustomLabel>Email</CustomLabel>
-          <CustomInput type="text"
+          <CustomInput
+            type="text"
             id="usuario"
             placeholder="0632454567@senacrs.edu.br"
             value={email}

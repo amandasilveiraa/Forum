@@ -1,12 +1,12 @@
 import React from 'react';
+import Routas from './Routes/Routas';
 import StyledGlobal from './styledGlobal';
-import Login from './pages/Login/Login'
 
 const App = () => {
   return (
     <div>
       <StyledGlobal />
-      <Login />
+      <Routas/>
     </div>
   );
 };
