@@ -4,7 +4,8 @@ export const HeaderContainer = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    /* padding: 20px; */
+    /* background-color: #a21515; */
 `
 
 export const DivLeft = styled.div`
@@ -12,15 +13,17 @@ export const DivLeft = styled.div`
     flex-direction: row;
     align-items: left; /* Centraliza verticalmente */
     justify-content: left; /* Centraliza horizontalmente */
-    background-color: pink;
 `
-
+export const DivMenu = styled.img`
+    width: 2vw;
+    height: 5vh;
+    margin-left: 9vh;
+`
 export const DivLogo = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center; /* Centraliza verticalmente */
     justify-content: center; /* Centraliza horizontalmente */
-
     /* background-color: blue; */
     margin-left: 5%;
 
@@ -43,4 +46,9 @@ export const ButtonEstilo = styled.button`
     border: none;
     font-weight: regular;
     text-decoration: none;
+`
+
+export const ImgSearch = styled.img`
+    width:28px;
+
 `
