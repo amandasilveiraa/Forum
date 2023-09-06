@@ -38,6 +38,7 @@ export const ImagemContainer = styled.img`
     position:absolute;
     width: 100%;
     height: 100%;
+    border-radius: 30%;
 `
 export const DivPublic = styled.div`
     display: flex;
