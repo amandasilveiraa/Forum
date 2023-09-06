@@ -1,18 +1,39 @@
+import { useNavigate } from "react-router-dom";
+import { DescContainer, TituloContainer, TextoContainer, DivPublic, DivImg, ButtonEstilo } from "./styled";
+
 import Card from "../../components/Card/Card";
 import { ContainerGrande } from "../../components/Card/styled";
 import Header2 from "../../components/Header2/Header2";
-import { DescContainer, TituloContainer, TextoContainer, DivPublic, DivImg, ButtonEstilo } from "./styled";
-import PublicImg from "../../assets/add_box_FILL0_wght400_GRAD0_opsz48.png"
-import { useNavigate } from "react-router-dom";
 
+import PublicImg from "../../assets/add_box_FILL0_wght400_GRAD0_opsz48.png"
+import TrabalhadorAmbulante from "../../assets/TrabalhadorAmbulante.jpg"
+import PeleFutebol from "../../assets/PeleFutebol.jpg"
 
 function Postagem() {
 
-        const navigate = useNavigate();
+    const navigate = useNavigate()
+    const goToPost = () => {
+      navigate('/post')
+    }
 
-        const goToPost = () => {
-          navigate('/post')
-        }
+    const postContent = [
+      {
+        PostImage: TrabalhadorAmbulante,
+        PostDescription: "Título da postagem 1"
+      },
+      {
+        PostImage: TrabalhadorAmbulante,
+        PostDescription: "Título da postagem 2"
+      },
+      {
+        PostImage: PeleFutebol,
+        PostDescription: "Título da postagem 3"
+      },
+      {
+        PostImage: PeleFutebol,
+        PostDescription: "Título da postagem 4"
+      },
+    ]
     return(
     <>
     <Header2/>
@@ -26,11 +47,7 @@ function Postagem() {
       </ButtonEstilo>
     </DivPublic>
     <ContainerGrande>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
+      <Card postContent={postContent}/>
     </ContainerGrande> 
     </>
     )
