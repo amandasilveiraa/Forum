@@ -74,7 +74,7 @@ function Login() {
         </CustomForm>
 
         <p>Not registred yet? <CustomLink>
-          <Link to ="/Cadastro">
+          <Link to ="/TelaPostagem">
           Create an account
           </Link>
           </CustomLink></p>

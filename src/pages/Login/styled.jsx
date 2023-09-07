@@ -57,7 +57,6 @@ export const CustomLabel = styled.label`
   font-weight: bold;
   color: black;
   font-family: Nunito;
-
 `
 
 export const CustomLink = styled.a`
