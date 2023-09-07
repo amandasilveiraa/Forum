@@ -22,7 +22,7 @@ function Cadastro (){
         <CustomInputSubmit class="submit" id="submit" value="Create account" type="submit"></CustomInputSubmit>
 
        </CustomForm>
-       <PAlready>Already had? <CustomLink href="">Sign in</CustomLink></PAlready>
+       <PAlready>Already had? <CustomLink>Sign in</CustomLink></PAlready>
     </FormContainer>
     </>
     )

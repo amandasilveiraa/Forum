@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const TitleDoIt = styled.h1`
   margin-bottom: 5vh;
   font-size: 8vh;
+  font-family: Nunito;
+
 `
 
 export const FormContainer = styled.div`
@@ -25,9 +27,9 @@ export const CustomForm = styled.form`
 `
 
 export const CustomInput = styled.input`
-  height: 20vh;
+  height: 05vh;
   border: none;
-  border-radius: 30px;
+  border-radius: 20px;
   background-color: #D9D9D9;
   margin-bottom: 5px;
   border: 0 none;
@@ -41,10 +43,9 @@ export const CustomInputSubmit = styled.input`
   background-color:#030202;
   color: white;
   font-size: 2vh;
-  height: 20vh;
+  height: 07vh;
   border: none;
   border-radius: 30px;
-  margin-bottom: 5px;
   margin-top: 3vh;
   gap: 2vh;
   border: 0 none;
@@ -56,10 +57,14 @@ export const CustomInputSubmit = styled.input`
 export const CustomLabel = styled.label`
   margin-top: 1vh;
   font-size: 20px
+  font-family: Nunito;
+
 `
 export const PAlready = styled.p`
     margin-top: 5vh;
     font-size: 2.5vh;
+    font-family: Nunito;
+
 `
 
 export const CustomLink = styled.a`
