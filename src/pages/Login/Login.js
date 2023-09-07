@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Header from '../../components/Header/Header'
-import { CustomForm, CustomInput, CustomInputSubmit, CustomLabel, CustomLink, FormContainer, TitleDoIt } from './styledLogin';
+import { CustomForm, CustomInput, CustomInputSubmit, CustomLabel, CustomLink, FormContainer, TitleDoIt } from './styled';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
@@ -15,9 +15,13 @@ function Login() {
 
   const navigate = useNavigate()
 
-  const goToCadastro = () => {
-    navigate('cadastro')
+  const goToHome = () => {
+    navigate('postagem')
   }
+
+  // const goToCadastro = () => {
+  //   navigate('cadastro')
+  // }
 
   const hadleSubmit = (e) => {
     e.preventDefault()
@@ -32,7 +36,7 @@ function Login() {
     })
     .then(response => {
       alert(response.data.message)
-      goToCadastro()
+      goToHome()
     })
     .catch(error => console.log(error))
     
@@ -68,7 +72,7 @@ function Login() {
           
         </CustomForm>
 
-        <p>Not registred yet? <CustomLink href="">Create an account</CustomLink></p>
+        <p>Not registred yet? <CustomLink>Create an account</CustomLink></p>
 
       </FormContainer>
       </>

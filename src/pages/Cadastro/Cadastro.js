@@ -1,5 +1,5 @@
 import React from "react";
-import { CustomForm, CustomInput, CustomLabel, CustomLink, FormContainer, TitleDoIt, CustomInputSubmit, PAlready } from './styledCadastro';
+import { CustomForm, CustomInput, CustomLabel, CustomLink, FormContainer, TitleDoIt, CustomInputSubmit, PAlready } from './styled';
 import Header from "../../components/Header/Header";
 
 function Cadastro (){

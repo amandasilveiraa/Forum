@@ -2,7 +2,7 @@ import Header2 from "../../components/Header2/Header2";
 import CardPerfil from "../../components/CardPerfil/CardPerfil";
 import CardChat from "../../components/CardChat/CardChat";
 import CardComentarios from "../../components/CardComentarios/CardComentarios";
-import {TituloComments, DivComments} from "../../pages/Chat/Chat.jsx"
+import {TituloComments, DivComments} from "../../pages/Chat/styled"
 import LabelComment from "../../components/LabelComments/LabelComments";
 
 function Chat (){
