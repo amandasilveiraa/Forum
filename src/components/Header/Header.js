@@ -1,14 +1,21 @@
 import React from 'react';
 import logoImg from '../../assets/logoTeste.svg'
+import { useNavigate } from "react-router-dom";
+
 
 import { ButtonEstilo, DivButton, DivLeft, DivLogo, HeaderContainer, ImgLogo } from './styled';
 
 
 function Header () {
-  const handleButtonClick = () => {
-    // Troca para a outra página quando o botão for clicado
-    window.location.href = './pages/Login/Login';
-  };
+  // const handleButtonClick = () => {
+  //   // Troca para a outra página quando o botão for clicado
+  //   window.location.href = './pages/Login/Login';
+  // };
+
+  const navigate = useNavigate()
+  const goToPostagem = () => {
+    navigate('/postagem')
+  }
 
   return (
     <HeaderContainer>
@@ -17,7 +24,7 @@ function Header () {
         <ImgLogo src={logoImg} alt="Logo"/>
       </DivLogo>
       <DivButton>
-        <ButtonEstilo onClick={handleButtonClick}>HOME</ButtonEstilo>
+        <ButtonEstilo onClick ={goToPostagem}>HOME</ButtonEstilo>
       </DivButton>
     </HeaderContainer>
   );

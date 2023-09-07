@@ -5,9 +5,10 @@ export const ContainerGrande = styled.div`
     flex-direction: row;
     overflow-x: scroll;
     overflow-y: hidden;
-    gap: 5vh;
+    gap: 2vh;
     height: 43vh;
     padding: 5vh 5vh 0vh 5vh;
+    height:100%;
 
     &::-webkit-scrollbar-track {
         border-radius: 15px;
@@ -16,17 +17,18 @@ export const ContainerGrande = styled.div`
     
       /* Estilos para a barra de rolagem */
       &::-webkit-scrollbar {
-        width: 6px;
+        width: 1px;
         background-color: #FFFFFF;
-        width: 90%;
       }
     
       /* Estilos para o thumb do scroll */
       &::-webkit-scrollbar-thumb {
         border-radius: 15px;
         box-shadow: inset 0 40 6px rgba(0, 0, 0, 0.3);
-        background-color: #000000;
+        background-color: #000000;        
+        
       }
+
 `
 
 export const CardContainer = styled.button`
@@ -35,6 +37,7 @@ export const CardContainer = styled.button`
     flex-shrink: 0;
     border-radius:13px;
     border:0;
+    bottom: 3vh;
 
     display:flex;
     flex-direction: row;

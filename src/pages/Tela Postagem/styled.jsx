@@ -8,7 +8,7 @@ export const TextoContainer = styled.div`
 
 export const TituloContainer = styled.h3`
     width: 35vw;
-    height: 3vh;
+    height: 30vh;
     color: #000;
     font-family: Nunito;
     font-size: 55px;

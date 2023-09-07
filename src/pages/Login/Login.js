@@ -3,6 +3,7 @@ import Header from '../../components/Header/Header'
 import { CustomForm, CustomInput, CustomInputSubmit, CustomLabel, CustomLink, FormContainer, TitleDoIt } from './styled';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Login() {
 
@@ -72,7 +73,11 @@ function Login() {
           
         </CustomForm>
 
-        <p>Not registred yet? <CustomLink>Create an account</CustomLink></p>
+        <p>Not registred yet? <CustomLink>
+          <Link to ="/Cadastro">
+          Create an account
+          </Link>
+          </CustomLink></p>
 
       </FormContainer>
       </>
