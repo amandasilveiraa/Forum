@@ -20,7 +20,7 @@ function CriarPostagem  () {
           </CenterDiv>
 
           <RightDiv>
-            <p>Crie sua própria postagem</p>
+            <p>Crie sua própria postagem!</p>
           </RightDiv>
         </MainContent>
 
