@@ -8,13 +8,27 @@ import Header2 from "../../components/Header2/Header2";
 import PublicImg from "../../assets/add_box_FILL0_wght400_GRAD0_opsz48.png"
 import TrabalhadorAmbulante from "../../assets/TrabalhadorAmbulante.jpg"
 import PeleFutebol from "../../assets/PeleFutebol.jpg"
+import { useEffect } from "react";
 
-function Postagem() {
+function Postagem(props) {
 
     const navigate = useNavigate()
     const goToPost = () => {
       navigate('/post')
+  }
+
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    if (!token) {
+      navigate('/')
     }
+  },[navigate])
+  
+  const hadleLogout = () => {
+    localStorage.removeItem('token')
+    localStorage.removeItem('email')
+    navigate('/')
+  }
 
     const postContent = [
       {
@@ -44,10 +58,11 @@ function Postagem() {
     <DivPublic>
       <ButtonEstilo onClick={goToPost}>    
         <DivImg src={PublicImg} alt=""/>
-      </ButtonEstilo>
+          </ButtonEstilo>
+      <button onClick={hadleLogout}>Logout</button>
     </DivPublic>
     <ContainerGrande>
-      <Card postContent={postContent}/>
+          <Card postContent={postContent} news={props.news} setNews={props.serNews} />
     </ContainerGrande> 
     </>
     )

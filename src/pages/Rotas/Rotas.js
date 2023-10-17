@@ -4,7 +4,7 @@ import Cadastro from "../Cadastro/Cadastro"
 import Post from "../Post/Post"
 import Login from "../Login/Login"
 // import Chat from "../Chat/Chat"
-function Rotas(){
+function Rotas(props){
 
     return(
         <>
@@ -12,7 +12,7 @@ function Rotas(){
         <Routes>
             <Route index element={<Login />} />
             <Route path = "cadastro" element = {<Cadastro />}/> 
-            <Route path = "postagem" element = {<TelaPostagem/>}/>
+                    <Route path="postagem" element={<TelaPostagem news={props.news} setNews={props.setNews} />}/>
             <Route path = "post" element = {<Post/>}/>
             {/* <Route path = "chat" element = {<Chat/>}/>  */}
         </Routes>

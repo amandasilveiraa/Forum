@@ -16,13 +16,10 @@ function Login() {
 
   const navigate = useNavigate()
 
-  const goToHome = () => {
-    navigate('postagem')
+  const saveUserInfoLocalStorage = (token) => {
+    localStorage.setItem('token', token);
+    localStorage.setItem('email', email);
   }
-
-  // const goToCadastro = () => {
-  //   navigate('cadastro')
-  // }
 
   const hadleSubmit = (e) => {
     e.preventDefault()
@@ -37,7 +34,9 @@ function Login() {
     })
     .then(response => {
       alert(response.data.message)
-      goToHome()
+      saveUserInfoLocalStorage(response.data.token)
+      navigate('postagem')
+      
     })
     .catch(error => console.log(error))
     
