@@ -6,8 +6,6 @@ import { ContainerGrande } from "../../components/Card/styled";
 import Header2 from "../../components/Header2/Header2";
 
 import PublicImg from "../../assets/add_box_FILL0_wght400_GRAD0_opsz48.png"
-import TrabalhadorAmbulante from "../../assets/TrabalhadorAmbulante.jpg"
-import PeleFutebol from "../../assets/PeleFutebol.jpg"
 import { useEffect } from "react";
 
 function Postagem(props) {
@@ -30,24 +28,6 @@ function Postagem(props) {
     navigate('/')
   }
 
-    const postContent = [
-      {
-        PostImage: TrabalhadorAmbulante,
-        PostDescription: "Título da postagem 1"
-      },
-      {
-        PostImage: TrabalhadorAmbulante,
-        PostDescription: "Título da postagem 2"
-      },
-      {
-        PostImage: PeleFutebol,
-        PostDescription: "Título da postagem 3"
-      },
-      {
-        PostImage: PeleFutebol,
-        PostDescription: "Título da postagem 4"
-      },
-    ]
     return(
     <>
     <Header2/>
@@ -62,7 +42,7 @@ function Postagem(props) {
       <button onClick={hadleLogout}>Logout</button>
     </DivPublic>
     <ContainerGrande>
-          <Card postContent={postContent} news={props.news} setNews={props.serNews} />
+          <Card news={props.news} setNews={props.serNews} />
     </ContainerGrande> 
     </>
     )

@@ -18,15 +18,17 @@ export const FormContainer = styled.div`
 export const CustomForm = styled.form`
   display: flex;
   flex-direction: column;
-  width: 30vw;
+  width: 40vw;
   height: 45vh;
   gap: 1vh;
   margin-top: 4vh;
+  align-items: center;
 `
 
 export const CustomInput = styled.input`
   background-color: #D9D9D9;
   height: 7vh;
+  width: 30vw;
   border: none;
   border-radius: 20px;
   margin-bottom: 5px;
@@ -42,6 +44,7 @@ export const CustomInput = styled.input`
 
 export const CustomInputSubmit = styled.input`
   height: 7vh;
+  width: 30vw;
   border: none;
   border-radius: 20px;
   margin-bottom: 5px;
@@ -57,6 +60,7 @@ export const CustomLabel = styled.label`
   font-weight: bold;
   color: black;
   font-family: Nunito;
+    
 `
 
 export const CustomLink = styled.a`

@@ -11,9 +11,9 @@ function Rotas(props){
         <BrowserRouter>
         <Routes>
             <Route index element={<Login />} />
-            <Route path = "cadastro" element = {<Cadastro />}/> 
-                    <Route path="postagem" element={<TelaPostagem news={props.news} setNews={props.setNews} />}/>
-            <Route path = "post" element = {<Post/>}/>
+            <Route path = "/cadastro" element = {<Cadastro />}/> 
+            <Route path="/postagem" element={<TelaPostagem news={props.news} setNews={props.setNews} />}/>
+            <Route path = "/post" element = {<Post/>}/>
             {/* <Route path = "chat" element = {<Chat/>}/>  */}
         </Routes>
         </BrowserRouter>

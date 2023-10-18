@@ -12,7 +12,7 @@ function App() {
     <StyledGlobal/>
     {/* <Postagem/> */}
     {/* <Post/> */}
-      <Rotas new={news} setNews={setNews} />
+      <Rotas news={news} setNews={setNews} />
   </>
   )
 }

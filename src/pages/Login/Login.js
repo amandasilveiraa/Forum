@@ -35,7 +35,7 @@ function Login() {
     .then(response => {
       alert(response.data.message)
       saveUserInfoLocalStorage(response.data.token)
-      navigate('postagem')
+      navigate('/postagem')
       
     })
     .catch(error => console.log(error))
@@ -73,7 +73,7 @@ function Login() {
         </CustomForm>
 
         <p>Not registred yet? <CustomLink>
-          <Link to ="/TelaPostagem">
+          <Link to ="/cadastro">
           Create an account
           </Link>
           </CustomLink></p>
