@@ -33,7 +33,7 @@ app.post('/login', (req, res) => {
 
 app.get('/news', (req, res) => {
     res.json(news);
-});
+  });
 
 app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}`);

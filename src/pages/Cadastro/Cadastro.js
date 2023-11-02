@@ -17,12 +17,8 @@ function Cadastro() {
   const navigate = useNavigate()
 
   const goToHome = () => {
-    navigate('postagem')
+    navigate('/login')
   }
-
-  // const goToCadastro = () => {
-  //   navigate('cadastro')
-  // }
 
   const hadleSubmit = (e) => {
     e.preventDefault()

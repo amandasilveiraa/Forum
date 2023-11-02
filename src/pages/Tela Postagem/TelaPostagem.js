@@ -10,9 +10,10 @@ import { useEffect } from "react";
 
 function Postagem(props) {
 
-    const navigate = useNavigate()
-    const goToPost = () => {
-      navigate('/post')
+  const navigate = useNavigate()
+  
+  const goToPost = () => {
+    navigate('/post')
   }
 
   useEffect(() => {
@@ -21,12 +22,6 @@ function Postagem(props) {
       navigate('/')
     }
   },[navigate])
-  
-  const hadleLogout = () => {
-    localStorage.removeItem('token')
-    localStorage.removeItem('email')
-    navigate('/')
-  }
 
     return(
     <>
@@ -39,10 +34,9 @@ function Postagem(props) {
       <ButtonEstilo onClick={goToPost}>    
         <DivImg src={PublicImg} alt=""/>
           </ButtonEstilo>
-      <button onClick={hadleLogout}>Logout</button>
     </DivPublic>
     <ContainerGrande>
-          <Card news={props.news} setNews={props.serNews} />
+      <Card news={props.news} setNews={props.serNews} />
     </ContainerGrande> 
     </>
     )

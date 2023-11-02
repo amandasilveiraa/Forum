@@ -46,6 +46,7 @@ export const ButtonEstilo = styled.button`
     border: none;
     font-weight: regular;
     text-decoration: none;
+    cursor: pointer;
 `
 
 export const ImgSearch = styled.img`
