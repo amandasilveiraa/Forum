@@ -2,9 +2,8 @@ import { BackArrow, Card1, Drop, Card2, CardContainer, H3container1, H1conteiner
 import profile from "../../assets/fotoPerfil.jpg"
 import drophere from "../../assets/drophere.png"
 
-
-function CriarPostagem  () {
-
+function CriarPostagem() {
+  
     return (
 
       <PageWrapper>

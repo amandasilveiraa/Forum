@@ -54,7 +54,7 @@ export const CustomLabel = styled.label`
   font-family: Nunito;
 `
 
-export const CustomP = styled.p`
+export const CustomP = <styled className="button"></styled>`
   font-family: Nunito;
   font-weight: bold;
 `

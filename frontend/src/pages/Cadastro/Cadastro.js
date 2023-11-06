@@ -9,34 +9,36 @@ function Cadastro() {
 
   document.body.style.overflow = 'hidden'; //  Corta o conteúdo que ultrapassa o tamanho da DIV
   
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  console.log(email)
-
   const navigate = useNavigate()
 
-  const goToHome = () => {
-    navigate('/login')
-  }
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState(""); 
 
-  const hadleSubmit = (e) => {
-    e.preventDefault()
+  const isButtonDisabled = password !== confirmPassword;
 
-    const credentials = { email, password } 
-    
-    axios
-    .post('http://localhost:8000/login', credentials, {
-      headers: {
-        'Content-Type': 'application/json',
+  function goToLogin() {
+    navigate('/register')
+}
+
+  const registerUser = async (e) => {
+      e.preventDefault();
+      const data = {
+        name,
+        email,
+        password,
+      };
+      try {
+        await url.post("/user/create", data);
+        console.log("Usuário criado com sucesso!");
+  
+        navigate('/')
+      } catch (error) {
+        console.error("Erro ao fazer login:", error);
+        setError("Credenciais inválidas. Verifique seu email e senha.");
       }
-    })
-    .then(response => {
-      alert(response.data.message)
-      goToHome()
-    })
-    .catch(error => console.log(error))
-    
   };
   
   return (
@@ -46,36 +48,44 @@ function Cadastro() {
         
         <TitleDoIt>Welcome back to Do It!</TitleDoIt>
 
-        <CustomForm onSubmit={hadleSubmit}>
+        <CustomForm onSubmit={registerUser}>
 
           <CustomLabel>Email</CustomLabel>
           <CustomInput
-            type="text"
-            id="usuario"
             placeholder="0632454567@senacrs.edu.br"
-            value={email}
-            onChange = {(e) => setEmail(e.target.value)}
+            type='email'
+            value={email} 
+            onChange={(e) => setEmail(e.target.value)}
+            required
           />
           
           <CustomLabel>Password</CustomLabel>
-          <CustomInput type="password"
-            id="senha"
+          <CustomInput
             placeholder="Enter your password"
             value={password} 
-            onChange = {(e) => setPassword(e.target.value)}  
+            onChange={(e) => setPassword(e.target.value)}
+            required
           />
 
           <CustomLabel>Confirm password</CustomLabel>
-          <CustomInput type="password"
-            id="senha"
-            placeholder="Confirm your password"
-            value={password} 
-            onChange = {(e) => setPassword(e.target.value)}  
+          <CustomInput
+            type='password'
+            value={confirmPassword} 
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            required
           />
+          {error ?
+              <div>
+                  <label>{error}</label>
+                  <CustomInputSubmit type="submit" value="Cadastrar" disabled={isButtonDisabled}/>
+              </div>
+              :
+              <div>
+                  <CustomInputSubmit type="submit" value="Cadastrar" />
+              </div>
+          }
 
-          <CustomInputSubmit class="submit" id="submit" value="Enter" type="submit" />
-
-          <CustomP>Already had? <Link to ="/Home"> Sign in </Link> </CustomP>
+          <CustomP onClick={goToLogin}>Already had? Sign in! </CustomP>
           
         </CustomForm>
 

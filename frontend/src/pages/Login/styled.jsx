@@ -42,7 +42,7 @@ export const CustomInput = styled.input`
 
 `;
 
-export const CustomInputSubmit = styled.input`
+export const CustomInputSubmit = styled.button`
   height: 7vh;
   width: 30vw;
   border: none;
@@ -63,7 +63,7 @@ export const CustomLabel = styled.label`
     
 `
 
-export const CustomLink = styled.a`
+export const CustomLink = styled.button`
   text-decoration: none;
   color: #030202;
   font-weight: bold;

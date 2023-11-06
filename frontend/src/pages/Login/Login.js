@@ -9,38 +9,54 @@ function Login() {
 
   document.body.style.overflow = 'hidden'; //  Corta o conteúdo que ultrapassa o tamanho da DIV
   
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  console.log(email)
-
   const navigate = useNavigate()
-
-  const saveUserInfoLocalStorage = (token) => {
-    localStorage.setItem('token', token);
-    localStorage.setItem('email', email);
-  }
-
-  const hadleSubmit = (e) => {
-    e.preventDefault()
-
-    const credentials = { email, password } 
     
-    axios
-    .post('http://localhost:8000/login', credentials, {
-      headers: {
-        'Content-Type': 'application/json',
-      }
-    })
-    .then(response => {
-      alert(response.data.message)
-      saveUserInfoLocalStorage(response.data.token)
-      navigate('/postagem')
-      
-    })
-    .catch(error => console.log(error))
+    function goToCadastro() {
+        navigate('/register')
+    }
+
+    const [name, setName] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
+
+    const handleLogin = async (e) => {
+        e.preventDefault();
+        
+        const data = {
+          name,
+          password
+        };
+
+        console.log('---------> dada', data)
+
+        try {
+            const response = await url.post("/auth/login", data);
     
-  };
+            console.log('***********response: ', response)
+
+            if (response.data.success === true) {
+                console.log("User connected!");
+    
+                url.defaults.headers.common[
+                    "Authorization"
+                ] = `Bearer ${response.data.data.token}`;
+    
+                localStorage.setItem("@Auth:user", JSON.stringify(response.data.data.name));
+                localStorage.setItem("@Auth:token", response.data.data.token);
+                const userId = response.data.data.id;
+
+                localStorage.setItem("@Auth:user_id", userId);
+    
+                navigate('/home');
+            } else {
+                setError("Credenciais inválidas. Verifique seu nome e senha.");
+            }
+        } catch (error) {
+            console.error("Erro ao fazer login:", error);
+            setError("Credenciais inválidas. Verifique seu nome e senha.");
+        }
+    };
+
   
   return (
     <>
@@ -53,30 +69,32 @@ function Login() {
 
           <CustomLabel>Email</CustomLabel>
           <CustomInput
-            type="text"
-            id="usuario"
             placeholder="0632454567@senacrs.edu.br"
-            value={email}
-            onChange = {(e) => setEmail(e.target.value)}
+            type='text'
+            value={name}
+            onChange={(e) => [setName(e.target.value), setError("")]}
           />
           
           <CustomLabel>Password</CustomLabel>
-          <CustomInput type="password"
-            id="senha"
+          <CustomInput
             placeholder="Enter your password"
-            value={password} 
-            onChange = {(e) => setPassword(e.target.value)}  
-          />
-
-          <CustomInputSubmit class="submit" id="submit" value="Enter" type="submit" />
-          
+            type='password'
+            value={password}
+            onChange={(e) => [setPassword(e.target.value), setError("")]}
+            />
+          {error ? 
+              <div>
+                  <label>{error}</label>
+                  <CustomInputSubmit onClick={handleLogin} disabled>Entrar</CustomInputSubmit>
+              </div>
+          :
+              <div>
+                  <CustomInputSubmit onClick={handleLogin}>Entrar</CustomInputSubmit>
+              </div>
+          }
         </CustomForm>
 
-        <p>Not registred yet? <CustomLink>
-          <Link to ="/cadastro">
-          Create an account
-          </Link>
-          </CustomLink></p>
+        <p>Not registred yet? <CustomLink  onClick={goToCadastro}>Create an account</CustomLink></p>
 
       </FormContainer>
       </>
