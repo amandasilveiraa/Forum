@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import Header from '../../components/Header/Header'
 import { CustomForm, CustomInput, CustomInputSubmit, CustomLabel, CustomLink, FormContainer, TitleDoIt } from './styled';
-import axios from 'axios';
+import { url } from '../../constants/url'
 import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 
 function Login() {
 
@@ -12,7 +11,7 @@ function Login() {
   const navigate = useNavigate()
     
     function goToCadastro() {
-        navigate('/register')
+        navigate('/cadastro')
     }
 
     const [name, setName] = useState("");
@@ -65,7 +64,7 @@ function Login() {
         
         <TitleDoIt>Welcome back to Do It!</TitleDoIt>
 
-        <CustomForm onSubmit={hadleSubmit}>
+        <CustomForm onSubmit={handleLogin}>
 
           <CustomLabel>Email</CustomLabel>
           <CustomInput

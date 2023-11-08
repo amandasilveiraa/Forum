@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import Header from '../../components/Header/Header'
 import { CustomForm, CustomInput, CustomInputSubmit, CustomLabel, CustomP, FormContainer, TitleDoIt } from './styled';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { url } from '../../constants/url'
 
 function Cadastro() {
 
@@ -11,7 +10,6 @@ function Cadastro() {
   
   const navigate = useNavigate()
 
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -20,13 +18,12 @@ function Cadastro() {
   const isButtonDisabled = password !== confirmPassword;
 
   function goToLogin() {
-    navigate('/register')
+    navigate('/login')
 }
 
   const registerUser = async (e) => {
       e.preventDefault();
       const data = {
-        name,
         email,
         password,
       };
@@ -81,11 +78,11 @@ function Cadastro() {
               </div>
               :
               <div>
-                  <CustomInputSubmit type="submit" value="Cadastrar" />
+                  <CustomInputSubmit type="submit" value="Cadastrar"/>
               </div>
           }
 
-          <CustomP onClick={goToLogin}>Already had? Sign in! </CustomP>
+          <CustomP onClick={goToLogin}>Already had? Sign in!</CustomP>
           
         </CustomForm>
 

@@ -10,19 +10,24 @@ export const FormContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 85vh;
+  height: 50vh; 
 `
 
 export const CustomForm = styled.form`
   display: flex;
   flex-direction: column;
-  width: 30vw;
-  height: 70vh;
+  width: 40vw;
+  height: 45vh;
+  gap: 1vh;
+  margin-top: 4vh;
+  align-items: center;
+  background-color: blue;
 `
 
 export const CustomInput = styled.input`
   background-color: #D9D9D9;
   height: 7vh;
+  width: 30vw;
   border: none;
   border-radius: 20px;
   margin-bottom: 5px;
@@ -36,13 +41,14 @@ export const CustomInput = styled.input`
 
 `;
 
-export const CustomInputSubmit = styled.input`
+export const CustomInputSubmit = styled.button`
   height: 7vh;
+  width: 30vw;
   border: none;
   border-radius: 20px;
+  margin-bottom: 5px;
   margin-top: 5vh;
   background-color: #030202;
-  color: white;
   font-weight: bold;
   cursor: pointer;
 `
@@ -54,7 +60,7 @@ export const CustomLabel = styled.label`
   font-family: Nunito;
 `
 
-export const CustomP = <styled className="button"></styled>`
+export const CustomP = styled.p`
   font-family: Nunito;
   font-weight: bold;
 `
