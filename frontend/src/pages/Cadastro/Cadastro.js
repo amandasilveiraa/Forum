@@ -10,6 +10,7 @@ function Cadastro() {
   
   const navigate = useNavigate()
 
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -17,15 +18,12 @@ function Cadastro() {
 
   const isButtonDisabled = password !== confirmPassword;
 
-  function goToLogin() {
-    navigate('/login')
-}
-
   const registerUser = async (e) => {
       e.preventDefault();
       const data = {
-        email,
-        password,
+        name:name,
+        email:email,
+        password:password,
       };
       try {
         await url.post("/user/create", data);
@@ -36,32 +34,34 @@ function Cadastro() {
         console.error("Erro ao fazer login:", error);
         setError("Credenciais inválidas. Verifique seu email e senha.");
       }
-  };
-  
+    };
+
+
   return (
     <>
       <Header />
       <FormContainer>
         
-        <TitleDoIt>Welcome back to Do It!</TitleDoIt>
+        <TitleDoIt>Welcome to Do It!</TitleDoIt>
 
         <CustomForm onSubmit={registerUser}>
 
           <CustomLabel>Email</CustomLabel>
           <CustomInput
-            placeholder="0632454567@senacrs.edu.br"
             type='email'
             value={email} 
             onChange={(e) => setEmail(e.target.value)}
             required
+
           />
           
           <CustomLabel>Password</CustomLabel>
           <CustomInput
-            placeholder="Enter your password"
+            type='password'
             value={password} 
             onChange={(e) => setPassword(e.target.value)}
             required
+
           />
 
           <CustomLabel>Confirm password</CustomLabel>
@@ -78,11 +78,11 @@ function Cadastro() {
               </div>
               :
               <div>
-                  <CustomInputSubmit type="submit" value="Cadastrar"/>
+                  <CustomInputSubmit type="submit" value="Cadastrar" />
               </div>
           }
 
-          <CustomP onClick={goToLogin}>Already had? Sign in!</CustomP>
+          {/* <CustomP onClick={goToLogin}>Already had? Sign in!</CustomP> */}
           
         </CustomForm>
 

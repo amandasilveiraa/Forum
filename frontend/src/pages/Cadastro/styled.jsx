@@ -10,18 +10,15 @@ export const FormContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 50vh; 
+  height: 80vh;
 `
 
 export const CustomForm = styled.form`
   display: flex;
   flex-direction: column;
-  width: 40vw;
-  height: 45vh;
-  gap: 1vh;
   margin-top: 4vh;
   align-items: center;
-  background-color: blue;
+  width:40vw;
 `
 
 export const CustomInput = styled.input`
@@ -49,8 +46,10 @@ export const CustomInputSubmit = styled.button`
   margin-bottom: 5px;
   margin-top: 5vh;
   background-color: #030202;
+  color: white;
   font-weight: bold;
   cursor: pointer;
+  font-family: Nunito;
 `
 
 export const CustomLabel = styled.label`

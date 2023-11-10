@@ -29,7 +29,7 @@ function Login() {
         console.log('---------> dada', data)
 
         try {
-            const response = await url.post("/auth/login", data);
+            const response = await url.post("/login/auth", data);
     
             console.log('***********response: ', response)
 

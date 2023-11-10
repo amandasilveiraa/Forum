@@ -7,10 +7,6 @@ import { ButtonEstilo, DivButton, DivLeft, DivLogo, HeaderContainer, ImgLogo } f
 
 
 function Header () {
-  // const handleButtonClick = () => {
-  //   // Troca para a outra página quando o botão for clicado
-  //   window.location.href = './pages/Login/Login';
-  // };
 
   const navigate = useNavigate()
   const goToPostagem = () => {

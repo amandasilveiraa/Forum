@@ -12,9 +12,9 @@ app.use(cors());
 app.use(express.json());
 app.set('port', process.env.PORT);
 app.use('/api', userRouter);
-app.use('/api', loginRouter);
-app.use('/api', postRouter);
-app.use('/api', commentRouter);
-app.use('/api', reactionsRouter);
+app.use('/api/login', loginRouter);
+app.use('/api/post', postRouter);
+app.use('/api/comment', commentRouter);
+app.use('/api/reaction', reactionsRouter);
 
 module.exports = app;
