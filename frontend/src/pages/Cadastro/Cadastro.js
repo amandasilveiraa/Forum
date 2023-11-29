@@ -46,6 +46,15 @@ function Cadastro() {
 
         <CustomForm onSubmit={registerUser}>
 
+        <CustomLabel>Name</CustomLabel>
+          <CustomInput
+            type='text'
+            value={name} 
+            onChange={(e) => setName(e.target.value)}
+            required
+
+          />
+
           <CustomLabel>Email</CustomLabel>
           <CustomInput
             type='email'

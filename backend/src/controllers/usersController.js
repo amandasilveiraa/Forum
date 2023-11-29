@@ -24,9 +24,8 @@ async function listUsers(request, response) {
     })
 }
 
-async function storeUser(request, response) {   
-    console.log(request.body)
-    const query = 'INSERT INTO users(name,email,password) values(?,?,?);';
+async function storeUser(request, response) { 
+    const query = 'INSERT INTO users(name, email,password) values(?,?,?);';
 
     const params = Array(
         request.body.name,
@@ -57,7 +56,35 @@ async function storeUser(request, response) {
     })
 }
 
+async function listUserInfos(request, response) {
+    const userId = request.params.id;
+  
+    // Preparar o comando de execução no banco
+    connection.query('SELECT * FROM users WHERE id = ?', [userId], (err, results) => {
+      if (err) {
+        response.status(400).json({
+          success: false,
+          message: "An error has occurred. Unable to return user informations.",
+          query: err.sql,
+          sqlMessage: err.sqlMessage
+        });
+      } else if (results.length > 0) {
+        response.status(200).json({
+          success: true,
+          message: 'Success in returning user informations.',
+          data: results[0] 
+        });
+      } else {
+        response.status(400).json({
+          success: false,
+          message: `Unable to return user informations. User not found.`,
+        });
+      }
+    });
+  }
+
 module.exports = {
     listUsers,
-    storeUser
+    storeUser,
+    listUserInfos
 }

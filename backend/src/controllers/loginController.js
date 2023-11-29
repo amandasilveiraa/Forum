@@ -3,10 +3,11 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 async function login(request, response) {
-    const query = "SELECT * FROM users WHERE `name` = ?";
+    console.log(request.body)
+    const query = "SELECT * FROM users WHERE `email` = ?";
     
     const params = Array(
-        request.body.name
+        request.body.email
     );
 
     connection.query(query, params, (err, results) => {

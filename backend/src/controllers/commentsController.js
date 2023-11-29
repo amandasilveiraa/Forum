@@ -1,70 +1,76 @@
+// Importa as configurações do banco de dados na variável connection
 const connection = require('../config/db');
 
-async function commentsByPostId(request, response) {
-
-    const query = 
-    " SELECT u.name, c.id, c.description, DATE_FORMAT(c.created_at, '%d/%m/%Y %H:%i:%s') as data_criacao, c.user_id " +
-    " FROM comments c, users u" +
-    " WHERE c.post_id = ? and c.user_id = u.id ";
-
-    const params = Array(
-        request.params.post_id
-    );
-    
-    connection.query(query, params, (err, results) => {
-        if (results) {
-            response
-                .status(200)
-                .json({
-                    success: true,
-                    message: `Sucesso! Lista de comentarios.`,
-                    data: results
-                });
-        } else {
-            response
-                .status(400)
-                .json({
-                    success: false,
-                    message: `Não foi possível realizar a ação. Verifique os dados informados`,
-                    query: err.sql,
-                    sqlMessage: err.sqlMessage
-                });
-        }
-    })
+// Função que retorna todos usuários no banco de dados
+async function listComments(request, response) {
+    const postId = request.params.commentPost_id;
+  
+    // Preparar o comando de execução no banco
+    connection.query('SELECT * FROM comments WHERE commentPost_id = ?', [postId], (err, results) => {
+      if (err) {
+        response.status(400).json({
+          success: false,
+          message: "An error has occurred. Unable to return user informations.",
+          query: err.sql,
+          sqlMessage: err.sqlMessage
+        });
+      } else if (results.length > 0) {
+        response.status(200).json({
+          success: true,
+          message: 'Success in returning user informations.',
+          data: results
+        });
+      } else {
+        response.status(400).json({
+          success: false,
+          message: `Unable to return user informations. User not found.`,
+        });
+      }
+    });
 }
 
-async function storeComment(request, response) {    
-    const params = Array(
-        request.body.description,
-        request.body.idUser,        
-        request.body.idPost
-    );
 
-    const query = 'INSERT INTO comments(description,user_id,post_id) values(?,?,?);';
+async function newComment(request, response) {
+    console.log("Novo comentário recebido:", request.body);
 
-    connection.query(query, params, (err, results) => {
-        if (results) {
-            response
-                .status(201)
-                .json({
-                    success: true,
-                    message: `Sucesso! Comentário cadastrado.`,
-                    data: results
-                });
-        } else {
-            response
-                .status(400)
-                .json({
-                    success: false,
-                    message: `Não foi possível realizar a ação. Verifique os dados informados`,
-                    query: err.sql,
-                    sqlMessage: err.sqlMessage
-                });
-        }        
-    })
+    const values = [
+        request.body.comment_descricao,
+        request.body.commentUser_id,
+        request.body.commentPost_id,
+    ];
+
+    const query = "INSERT INTO comments (comment_descricao, commentUser_id, commentPost_id) VALUES (?, ?, ?)";
+
+    try {
+        const results = await new Promise((resolve, reject) => {
+            connection.query(query, values, (err, results) => {
+                if (err) {
+                    console.error('Erro no banco de dados:', err);
+                    reject(err);
+                } else {
+                    resolve(results);
+                }
+            });
+        });
+
+        console.log("Comentário criado com sucesso:", results);
+        response.status(201).json({
+            success: true,
+            message: "Sucesso! Comentário criado",
+            data: results
+        });
+    } catch (err) {
+        response.status(400).json({
+            success: false,
+            message: "Não foi possível criar o comentário",
+            query: query,
+            sqlMessage: err.sqlMessage
+        });
+    }
 }
+
 
 module.exports = {
-    commentsByPostId,
-    storeComment
+    listComments,
+    newComment,
 }
